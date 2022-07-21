@@ -61,6 +61,12 @@ variable "aws_instance_type" {
   default = "t3.micro"
 }
 
+# Boolean data type
+variable "aws_instance_create" {
+  type    = bool
+  default = true
+}
+
 # Any indicates that we can have any kind of data inside our map()
 variable "aws_instance_filter_tags" {
   type = map(any)

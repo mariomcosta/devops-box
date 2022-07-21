@@ -30,23 +30,23 @@ output "aws_ami_image_type" {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 output "aws_instance_arn" {
-  value = aws_instance.test.arn
+  value = aws_instance.test[*].arn
 }
 
 output "aws_instance_private_dns" {
-  value = aws_instance.test.private_dns
+  value = aws_instance.test[*].private_dns
 }
 
 output "aws_instance_public_dns" {
-  value = aws_instance.test.public_dns
+  value = aws_instance.test[*].public_dns
 }
 
 output "aws_instance_public_ip" {
-  value = aws_instance.test.public_ip
+  value = aws_instance.test[*].public_ip
 }
 
 output "aws_instance_tags_all" {
-  value = aws_instance.test.tags_all
+  value = aws_instance.test[*].tags_all
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
