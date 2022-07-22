@@ -1,4 +1,4 @@
-# Terrafrom module 1
+# Terraform module 1
 
 ## Table of contents
 
