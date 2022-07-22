@@ -149,4 +149,4 @@ Editor preferences are available in the [editor config](https://reponame/blob/ma
 
 ## Thanks
 
-Thanks to Techops Team
+Thanks to everyone :)
