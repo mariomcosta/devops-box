@@ -119,6 +119,19 @@ aws_security_group_tags_all = tomap({
 aws_vpc_arn = "arn:aws:ec2:us-west-2:75643:vpc/vpc-fh128710"
 aws_vpc_id = "vpc-fh128710"
 ```
+
+And finally, to destroy everything:
+```sh
+terraform destroy
+```
+
+You should see something like:
+```text
+...
+aws_security_group.allow_ssh: Destruction complete after 1s
+
+Destroy complete! Resources: 2 destroyed.
+```
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first read the [issue guidelines](https://reponame/blob/master/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://reponame/issues/new).
