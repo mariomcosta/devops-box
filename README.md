@@ -19,7 +19,7 @@ Here we have three examples of Terraform usage, beginning from `0-s3-and-dynamod
 - 2-create-ec2-with-vars
 - 3-create-ec2-with-remote-backend
 
-## What's included
+## What's in module 1
 
 Here we have Terraform files and README.md containing TF documentation for each example folder.
 
