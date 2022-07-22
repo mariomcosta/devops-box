@@ -12,7 +12,7 @@
 
 ## Quick start
 
-Here we have three examples of Terraform usage, beginning from `0-s3-and-dynamodb` where we have the simplest way to write your code, set up your provider, and create your infrastructure. Going through the next folders we'll see the concept of `variables` and its data type and structure, `output` from a data resource, from a resource and from a list of resources, `loop structures`, and `remote backend using s3 and dynamodb`.
+Here we have three examples of Terraform usage, beginning from `1-create-ec2` where we have the simplest way to write your code, set up your provider, and create your infrastructure. Going through the next folders we'll see the concept of `variables` and its data type and structure, `output` from a data resource, from a resource and from a list of resources, `loop structures`, and `remote backend using s3 and dynamodb`.
 
 - 0-s3-and-dynamodb
 - 1-create-ec2
