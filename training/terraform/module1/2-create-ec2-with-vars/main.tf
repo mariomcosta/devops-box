@@ -11,7 +11,6 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = [var.aws_ami_owners]
-
   dynamic "filter" {
     for_each = var.aws_instance_filter_tags
     iterator = tag
