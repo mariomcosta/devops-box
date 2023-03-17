@@ -33,8 +33,6 @@ data "aws_ami" "ubuntu" {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 resource "aws_instance" "test" {
-  # count = var.aws_instance_create ? 1 : 0
-
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.aws_instance_type
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
