@@ -60,20 +60,3 @@ output "aws_instance_public_ip" {
 output "aws_instance_tags_all" {
   value = aws_instance.test[*].tags_all
 }
-
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
-
-# ARN of the security group
-output "aws_security_group_arn" {
-  value = aws_security_group.allow_ssh.arn
-}
-
-# ID of the security group
-output "aws_security_group_id" {
-  value = aws_security_group.allow_ssh.id
-}
-
-# A map of tags assigned to the resource, including those inherited from the provider default_tags configuration block
-output "aws_security_group_tags_all" {
-  value = aws_security_group.allow_ssh.tags_all
-}

@@ -36,18 +36,23 @@ module "network" {
 }
 
 module "compute" {
+  count  = 1
   source = "./modules/compute"
 
-  aws_sg_ingress_rule      = local.aws_sg_ingress_rule
-  aws_sg_egress_rule       = local.aws_sg_egress_rule
-  aws_sg_tags              = local.aws_sg_tags
   aws_instance_type        = local.aws_instance_type
   aws_instance_create      = local.aws_instance_create
   aws_instance_filter_tags = local.aws_instance_filter_tags
   aws_instance_tags        = local.aws_instance_tags
   aws_ami_owners           = local.aws_ami_owners
-  aws_vpc_id               = module.network.vpc_id
-  aws_vpc_arn              = module.network.vpc_arn
+
+  # exposed info from network module
+  subnet_id                = module.network.private_subnets[0]
+  subnet_cidr              = module.network.private_subnets_cidr_blocks[0]
+
+  # ensure that this compute module depends from network module resources first
+  depends_on = [
+    module.network
+  ]
 }
 
 

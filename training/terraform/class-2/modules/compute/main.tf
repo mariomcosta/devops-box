@@ -35,17 +35,17 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "test" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.aws_instance_type
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
   tags                   = var.aws_instance_tags
+
+  network_interface {
+    network_interface_id = aws_network_interface.test.id
+    device_index         = 0
+  }
 }
 
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh_terraform"
-  description = "Allow SSH inbound traffic"
-  vpc_id      = var.aws_vpc_id
-  ingress     = var.aws_sg_ingress_rule
-  egress      = var.aws_sg_egress_rule
-  tags        = var.aws_sg_tags
+resource "aws_network_interface" "test" {
+  subnet_id   = var.subnet_id
+  tags = {
+    Name = "primary_network_interface"
+  }
 }
-
